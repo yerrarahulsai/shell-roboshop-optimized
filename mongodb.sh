@@ -7,10 +7,10 @@ check_root
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 validate $? "Coying Mongo Repo"
 
-dnf install mongodb-org -y
+dnf install mongodb-org -y &>>$LOG_FILE
 validate $? "Installing MongoDB"
 
-systemctl enable mongod
+systemctl enable mongod &>>$LOG_FILE
 validate $? "Enabling MongoDB"
 
 systemctl start mongod
