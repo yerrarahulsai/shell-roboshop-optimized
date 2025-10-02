@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source ./common.sh
-app_name="catalogue" # When we do sourcing we can access variables from other file
+app_name=catalogue # When we do sourcing we can access variables from other file
 
 check_root
 app_setup
