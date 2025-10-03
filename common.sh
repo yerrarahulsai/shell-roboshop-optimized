@@ -99,7 +99,7 @@ app_setup(){
     rm -rf /app/*
     validate $? "Removing old code"
 
-    unzip /tmp/$app_name.zip
+    unzip /tmp/$app_name.zip &>>$LOG_FILE
     validate $? "Unzipping application"
 }
 
