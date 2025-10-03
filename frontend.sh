@@ -12,10 +12,10 @@ validate $? "Enabling Nginx"
 systemctl start nginx &>>$LOG_FILE
 validate $? "Starting Nginx"
 
-rm -rf /usr/share/nginx/html/* 
+rm -rf /usr/share/nginx/html/* &>>$LOG_FILE
 validate $? "Removing Old code"
 
-curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip &>>$LOG_FILE
 validate $? "Downloading frontend"
 
 cd /usr/share/nginx/html
